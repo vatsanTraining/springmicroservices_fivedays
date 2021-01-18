@@ -28,18 +28,24 @@ public class CustomerServiceApplication {
 		  *      => Declare @Autowired(required=false) exception will not be thrown but need to do a null check
 		  */
 		
-		  Customer ram = ctx.getBean(Customer.class);
-		  
-		  log.info(ram.toString());
-		  
-		  
-		   boolean result =ctx.isSingleton("ram");
-		   
-		   System.out.println(" Is Customer Bean Singleton :="+ result);
-		   
-		   boolean result2 = ctx.isPrototype("ram");
-		   
-		   System.out.println(" Is Customer Bean Prototype :="+ result2);
+		
+		/**
+		 *  Eager Initialization => Default for All Singleton Beans 
+		 *  Can Make it Lazy By adding @Lazy(value="true")
+		 *  Lazy Initialization => Default for Prototype Beans
+		 */
+//		  Customer ram = ctx.getBean(Customer.class);
+//		  
+//		  log.info(ram.toString());
+//		  
+//		  
+//		   boolean result =ctx.isSingleton("ram");
+//		   
+//		   System.out.println(" Is Customer Bean Singleton :="+ result);
+//		   
+//		   boolean result2 = ctx.isPrototype("ram");
+//		   
+//		   System.out.println(" Is Customer Bean Prototype :="+ result2);
 
 		   
 	
