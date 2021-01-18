@@ -2,9 +2,12 @@ package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
+import com.example.demo.condtional.TourAgentConditional;
 import com.example.demo.model.Tour;
 import com.example.demo.model.TourAgent;
 import com.example.demo.model.TourCatalog;
@@ -30,6 +33,8 @@ public class ApplicationConfiguration {
 	// Passing the Reference of Beans
 	
 	@Bean
+	//@ConditionalOnProperty(name = "spring.application.name",havingValue = "tour-prod")
+	@Conditional(TourAgentConditional.class)
 	public TourCatalog europeTour() {
 		
 		return new TourCatalog(lankaTour(),agentRamesh());

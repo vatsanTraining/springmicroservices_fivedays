@@ -9,15 +9,16 @@ import java.util.Set;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.JdbcProperties;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 
-import com.example.demo.config.ApplicationConfiguration;
+import com.example.demo.config.AdditionalConfig;
 import com.example.demo.model.Tour;
 import com.example.demo.model.TourCatalog;
 
 
+//@SpringBootApplication(exclude = BatchAutoConfiguration.class)
 @SpringBootApplication
 public class TourServiceApplication {
 
