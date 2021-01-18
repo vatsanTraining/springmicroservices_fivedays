@@ -18,7 +18,7 @@ public class Customer {
 	private String email;
 	
 	@Autowired(required = false)
-	//@Qualifier("ramsAddress2")
+	@Qualifier("ramsAddress2")
 	private Address billingAddress;
 	
 }

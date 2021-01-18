@@ -22,6 +22,7 @@ public class CustomerServiceApplication {
 		  *  AutoWire - Matching - More than One Bean -N   - Exception
 		  *     => solution -1  declaring one bean with @Bean and @Primary
 		  *     => Solution -2  Declaring @Autowired with @Qaulifier("nameofBean")  
+		  *     => If we have both @Primary and @Qualifier , @Qualifier will take the precedence
 		  *  AutoWire - Matching - NO Bean -0   - Exception
 		  *      => Throws Exception => Declare a Bean 
 		  *      => Declare @Autowired(required=false) exception will not be thrown but need to do a null check
@@ -30,6 +31,17 @@ public class CustomerServiceApplication {
 		  Customer ram = ctx.getBean(Customer.class);
 		  
 		  log.info(ram.toString());
+		  
+		  
+		   boolean result =ctx.isSingleton("ram");
+		   
+		   System.out.println(" Is Customer Bean Singleton :="+ result);
+		   
+		   boolean result2 = ctx.isPrototype("ram");
+		   
+		   System.out.println(" Is Customer Bean Prototype :="+ result2);
+
+		   
 	
 	}
 
