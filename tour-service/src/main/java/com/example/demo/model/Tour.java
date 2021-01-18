@@ -2,7 +2,7 @@ package com.example.demo.model;
 
 import org.springframework.stereotype.Component;
 
-@Component(value = "lankaTour")
+// @Component(value = "lankaTour")
 public class Tour {
 
 	

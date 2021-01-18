@@ -4,6 +4,9 @@
  */
 package com.example.demo;
 
+import java.util.Map;
+import java.util.Set;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -34,6 +37,18 @@ public class TourServiceApplication {
 		
 		ConfigurableApplicationContext ctx=  SpringApplication.run(TourServiceApplication.class, args);
 		
+		
+		       Map<String, TourCatalog> beanList   =  ctx.getBeansOfType(TourCatalog.class);
+		            
+		                    Set<Map.Entry<String,TourCatalog>> list =         beanList.entrySet();
+		                    
+		                     for(Map.Entry<String,TourCatalog> eachItem :list){
+		                    	 
+		                    	 System.out.println(eachItem.getKey()  +"=:=" +  eachItem.getValue());
+		                    	 
+		                    	 
+		                     }
+		            
 //		ConfigurableApplicationContext ctx=  new SpringApplicationBuilder(TourServiceApplication.class)
 //				     .properties("spring.main.allow-bean-definition-overriding:true").build().run(args);
 //		
