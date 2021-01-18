@@ -58,9 +58,15 @@ public class TourServiceApplication {
 		System.out.println(ctx.getClass().getName());
 		
 		
-		TourCatalog catalog = ctx.getBean(TourCatalog.class);
+		TourCatalog euroCatalog = ctx.getBean("europeTour",TourCatalog.class);
 		
-		System.out.println(catalog);
+		System.out.println(euroCatalog);
+		
+		
+       TourCatalog asiaCatalog = ctx.getBean("eastAsiaTour",TourCatalog.class);
+		
+		System.out.println(asiaCatalog);
+		
 		
 	}
 
