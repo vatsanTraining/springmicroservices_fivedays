@@ -40,9 +40,10 @@ public class ApplicationConfig {
 	}
 	
 	
-	@Bean
+	//@Bean(initMethod = "init")
 	//@Scope(scopeName = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-	@Lazy(value = true)
+	//@Lazy(value = true)
+	@Bean
 	public Customer ram() {
 		
 		log.info("Calling Factory Method ram() =========");
