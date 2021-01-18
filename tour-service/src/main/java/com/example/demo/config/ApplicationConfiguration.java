@@ -1,6 +1,7 @@
 package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +10,7 @@ import com.example.demo.model.TourAgent;
 import com.example.demo.model.TourCatalog;
 
 @Configuration
+//@SpringBootApplication
 public class ApplicationConfiguration {
 
 	

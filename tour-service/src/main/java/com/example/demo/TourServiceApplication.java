@@ -6,11 +6,14 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import com.example.demo.config.ApplicationConfiguration;
 import com.example.demo.model.Tour;
 import com.example.demo.model.TourCatalog;
+
 
 @SpringBootApplication
 public class TourServiceApplication {
@@ -27,7 +30,13 @@ public class TourServiceApplication {
 		 * 
 		 */
 		
+	//	ConfigurableApplicationContext ctx=  SpringApplication.run(ApplicationConfiguration.class, args);
+		
 		ConfigurableApplicationContext ctx=  SpringApplication.run(TourServiceApplication.class, args);
+		
+//		ConfigurableApplicationContext ctx=  new SpringApplicationBuilder(TourServiceApplication.class)
+//				     .properties("spring.main.allow-bean-definition-overriding:true").build().run(args);
+//		
 		
 		// getBean Method uses the id of the Bean which is firstCharacter the java class with @Component in lower case
 		
