@@ -16,10 +16,15 @@ public class CustomerServiceApplication {
 		ConfigurableApplicationContext ctx = SpringApplication.run(CustomerServiceApplication.class, args);
 	
 	
-		 /*
-		  *  AutoWire - Matching - One Bean - 1
-		  *  AutoWire - Matching - More than One Bean -N
-		  *  AutoWire - Matching - NO Bean -0
+		 /*  Field Injection 
+		  * 
+		  *  AutoWire - Matching - One Bean - 1  => works fine
+		  *  AutoWire - Matching - More than One Bean -N   - Exception
+		  *     => solution -1  declaring one bean with @Bean and @Primary
+		  *     => Solution -2  Declaring @Autowired with @Qaulifier("nameofBean")  
+		  *  AutoWire - Matching - NO Bean -0   - Exception
+		  *      => Throws Exception => Declare a Bean 
+		  *      => Declare @Autowired(required=false) exception will not be thrown but need to do a null check
 		  */
 		
 		  Customer ram = ctx.getBean(Customer.class);

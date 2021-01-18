@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import com.example.demo.model.Address;
 import com.example.demo.model.Customer;
@@ -12,11 +13,19 @@ public class ApplicationConfig {
 	
 	
 	
-	@Bean
-	public Address ramsAddress() {
-		
-		return new Address("Gandhi Street", "nehru nagar", "chennai", 600117);
-	}
+//	@Bean
+//	//@Primary
+//	public Address ramsAddress() {
+//		
+//		return new Address("Gandhi Street", "nehru nagar", "chennai", 600117);
+//	}
+//	
+//	
+//	@Bean
+//	public Address ramsAddress2() {
+//		
+//		return new Address("Shivaji Street", "Secor 202", "kalyani", 400117);
+//	}
 	
 	
 	@Bean
