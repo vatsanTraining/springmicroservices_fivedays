@@ -39,5 +39,26 @@ public class TourService {
     }
     
     
+	public Tour updateTour(Tour entity) {
+		
+		return this.repository.save(entity);
+	}
 	
+	
+	
+	public Optional<Tour> removeTour(Tour tour){
+		
+			Optional<Tour> optional = Optional.empty();
+		
+		
+		if(this.repository.existsById(tour.getId())) {
+			
+			this.repository.delete(tour);
+			
+			optional = Optional.of(tour);
+		}
+		
+		
+		return optional;
+	}
 }
