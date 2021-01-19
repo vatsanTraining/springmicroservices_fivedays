@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.Tour;
 import com.example.demo.services.TourService;
 
+import io.swagger.v3.oas.annotations.Operation;
+
 @RestController
 @RequestMapping(path = "/api/v1/tours")
 public class TourController {
@@ -33,6 +35,7 @@ public class TourController {
 		 this.service = service;
 	}
 	
+	@Operation(description = "Method used to Find all the Tours provided by SITA Tours")
 	@GetMapping(path = "/")
 	public List<Tour>  findAll(){
 		
@@ -68,6 +71,7 @@ public class TourController {
 	}
 	
 	
+	@Operation(description = "Updates the Current Cost of Tour by 10%")
 	@GetMapping(path = "/update")
 	public ResponseEntity<String> updateCost() {
 		
