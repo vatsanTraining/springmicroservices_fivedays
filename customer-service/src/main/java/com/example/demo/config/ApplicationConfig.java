@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 
 import com.example.demo.model.Address;
@@ -54,5 +55,20 @@ public class ApplicationConfig {
 		 ram.setEmail("ram@abc.com");
 		 
 		 return ram;
+	}
+	
+	@Bean
+	@Profile(value = "dev")
+	public Customer shyam() {
+		
+		return new Customer(2030,"Shyam","shyam@abc.com");
+	}
+	
+	
+	@Bean
+	@Profile(value = "prod")
+	public Customer manish() {
+		
+		return new Customer(3030,"Manish","mani@abc.com");
 	}
 }

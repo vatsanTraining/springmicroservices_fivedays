@@ -34,7 +34,7 @@ public class CustomerServiceApplication {
 		 *  Can Make it Lazy By adding @Lazy(value="true")
 		 *  Lazy Initialization => Default for Prototype Beans
 		 */
-		  Customer ram = ctx.getBean(Customer.class);
+		  Customer ram = ctx.getBean("ram",Customer.class);
 		  
 		  log.info(ram.toString());
 		  
@@ -48,6 +48,10 @@ public class CustomerServiceApplication {
 		   System.out.println(" Is Customer Bean Prototype :="+ result2);
 
 		   
+//		   System.out.println("Manish -PROD:=" +ctx.getBean("manish"));
+//		   
+//		   System.out.println("Shyam -DEV:="+ctx.getBean("shyam"));
+//		 
 		   ctx.close();
 		   
 	

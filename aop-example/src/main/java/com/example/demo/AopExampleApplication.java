@@ -16,6 +16,7 @@ public class AopExampleApplication {
 		 Converter currencyConverter = ctx.getBean("currencyConverterService",Converter.class);
 		 
 		 
+		 // Proxy being used
 		    System.out.println(currencyConverter.getClass().getName());
 		    
 		    
