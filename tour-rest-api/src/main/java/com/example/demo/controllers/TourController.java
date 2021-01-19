@@ -1,5 +1,51 @@
 package com.example.demo.controllers;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.Tour;
+import com.example.demo.services.TourService;
+
+@RestController
+@RequestMapping(path = "/api/v1/tours")
 public class TourController {
 
+	
+	
+	private TourService service;
+	
+	
+	@Autowired
+	public void setTourService(TourService service) {
+		
+		 this.service = service;
+	}
+	
+	@GetMapping(path = "/")
+	public List<Tour>  findAll(){
+		
+		return this.service.findAll();
+	}
+	
+	@GetMapping(path = "/{id}")
+	public Tour  findById(@PathVariable("id") int id){
+		
+		return  this.service.findById(id).orElseThrow(()->new RuntimeException("Given Id Not Found"));
+	}
+
+	
+	@PostMapping(path = "/")
+	public Tour addTour(@RequestBody Tour tour) {
+		
+		 return this.service.addTour(tour);
+		
+	}
+	
 }
