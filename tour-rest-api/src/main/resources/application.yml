@@ -16,3 +16,7 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true       
+
+logging:
+  level:
+    '[org.springframework.web]': trace
