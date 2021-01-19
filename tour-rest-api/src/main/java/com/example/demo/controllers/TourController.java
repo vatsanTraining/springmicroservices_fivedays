@@ -66,4 +66,14 @@ public class TourController {
 		return this.service.removeTour(entity).orElseThrow(()-> new RuntimeException("Element NOT FOUND"));
 		
 	}
+	
+	
+	@GetMapping(path = "/update")
+	public ResponseEntity<String> updateCost() {
+		
+		
+		 return ResponseEntity.status(HttpStatus.CREATED).body("Updated tours:="+this.service.updateCost());
+					
+	}
+	
 }

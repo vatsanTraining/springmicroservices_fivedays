@@ -61,4 +61,10 @@ public class TourService {
 		
 		return optional;
 	}
+	
+	public int updateCost() {
+		
+		
+		return this.repository.updateCost();
+	}
 }
