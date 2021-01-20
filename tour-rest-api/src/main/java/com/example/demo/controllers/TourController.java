@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,11 +38,20 @@ public class TourController {
 		 this.service = service;
 	}
 	
+	@Value("${server.port}")
+	private String portNumber;
+	
+	
 	@Operation(description = "Method used to Find all the Tours provided by SITA Tours")
 	@GetMapping(path = "/")
 	public List<Tour>  findAll(){
 		
-		return this.service.findAll();
+		
+		List<Tour> list = this.service.findAll();
+		
+		list.get(0).setId(Integer.parseInt(portNumber));
+		
+		return list;
 	}
 	
 	@GetMapping(path = "/{id}")

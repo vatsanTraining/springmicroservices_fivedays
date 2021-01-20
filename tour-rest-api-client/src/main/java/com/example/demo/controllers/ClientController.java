@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -22,6 +23,8 @@ public class ClientController {
 	public void setTemplate(RestTemplate template) {
 		this.template = template;
 	}
+	
+	
 	
 	@GetMapping(path = "/api/v1/client/tours")
 	public String getTours() {
@@ -45,7 +48,7 @@ public class ClientController {
 		 
 		 String response = this.lbtemplate.getForObject(baseURL, String.class);
 		 
-		return response;
+		return response ;
 	}
 
 	
