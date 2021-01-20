@@ -9,13 +9,19 @@ spring:
     username: root 
     password: srivatsan
     driver-class-name: com.mysql.cj.jdbc.Driver
-    
+  application:
+    name: tour-service
   jpa:
     hibernate:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true       
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:8761/eureka
 
 logging:
   level:

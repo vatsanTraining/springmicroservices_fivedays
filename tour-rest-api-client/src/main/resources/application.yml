@@ -1,0 +1,15 @@
+
+server:
+  port: 4848
+  
+spring:
+  application:
+    name: tour-client
+    
+eureka:
+  client:
+    service-url:
+       defaultZone: http://localhost:8761/eureka
+       
+       
+            
