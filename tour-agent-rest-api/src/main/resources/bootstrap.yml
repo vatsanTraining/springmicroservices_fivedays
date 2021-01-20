@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: tour-agent-rest-api
+        
+        
+          cloud:    config:      uri:      - http://localhost:8888
+      
+      
+      
