@@ -38,7 +38,7 @@ public class TourController {
 		 this.service = service;
 	}
 	
-	@Value("${server.port}")
+	@Value("${eureka.instance.instance-id}")
 	private String portNumber;
 	
 	
