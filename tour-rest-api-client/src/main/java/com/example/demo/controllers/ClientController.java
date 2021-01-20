@@ -43,7 +43,7 @@ public class ClientController {
 		 
 		 String baseURL = "http://TOUR-SERVICE/api/v1/tours/";
 		 
-		 String response = this.template.getForObject(baseURL, String.class);
+		 String response = this.lbtemplate.getForObject(baseURL, String.class);
 		 
 		return response;
 	}
