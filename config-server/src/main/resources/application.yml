@@ -1,15 +1,18 @@
 server:
   port: 8888
-  
-  
+
+
 spring:
+  application:
+    name: config-server
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/vatsanTraining/spring-cloud-config.git
+          uri: https://github.com/vatsanTraining/spring-cloud-config
           search-paths:
           - '{application}'
+            
 
 management:
   endpoints:
