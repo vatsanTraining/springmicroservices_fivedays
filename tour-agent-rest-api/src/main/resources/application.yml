@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root 
+    password: srivatsan
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: tour-agent-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true       
+  
+
+server:
+  port: 8787
+
