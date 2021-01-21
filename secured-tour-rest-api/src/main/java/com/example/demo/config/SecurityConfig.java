@@ -21,10 +21,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 	
+//		http.authorizeRequests().antMatchers("/api/v1/tours/**")
+//		      .authenticated().and().formLogin().and().logout().logoutSuccessUrl("/api/v1/tours/")
+//		       .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+//		
+	
 		http.authorizeRequests().antMatchers("/api/v1/tours/**")
-		      .authenticated().and().formLogin().and().logout().logoutSuccessUrl("/api/v1/tours/")
-		       .invalidateHttpSession(true).deleteCookies("JSESSIONID");
-		
+	      .authenticated().and().httpBasic().and().csrf().disable();
 	
 	}
 
