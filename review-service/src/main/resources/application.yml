@@ -1,0 +1,17 @@
+spring:
+  profiles: dev
+  application:
+    name: review-service
+server:
+  port: 8765
+
+---
+
+spring:
+  profiles: prod
+  application:
+    name: review-service
+
+server:
+  port: 8770
+

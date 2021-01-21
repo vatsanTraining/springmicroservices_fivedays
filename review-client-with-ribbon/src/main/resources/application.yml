@@ -1,10 +1,10 @@
  server:
   port: 3434
 
-  review-service:
+ review-service:
      ribbon:
         eureka:
           enabled: false
-     listOfServers: localhost:3737,localhost:3939
+     listOfServers: localhost:8770,localhost:8765
      ServerListRefreshInterval: 120000     
            
