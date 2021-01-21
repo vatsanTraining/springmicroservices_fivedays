@@ -12,14 +12,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		// TODO Auto-generated method stub
-		super.configure(auth);
+		
+		auth.inMemoryAuthentication().withUser("india").password("{noop}india").and().withUser("ADMIN");
+		
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		// TODO Auto-generated method stub
-		super.configure(http);
+
+	
+		http.authorizeRequests().antMatchers("/api/v1/tours/**")
+		      .authenticated().and().formLogin().and().logout().logoutSuccessUrl("/api/v1/tours/")
+		       .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+		
+	
 	}
 
 	
