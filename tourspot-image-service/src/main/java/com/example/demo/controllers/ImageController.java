@@ -23,8 +23,13 @@ public class ImageController {
 	
 	
 	@GetMapping(path = "/images/{id}")
-	public Image getImage(@PathVariable("id") int id)  throws InterruptedException{
+	public Image getImage(@PathVariable("id") int id)  throws InterruptedException,Exception{
 		
+		
+		if(id==2) {
+			
+			throw new Exception("Exception");
+		}
 		if(id<10) {
 			
 			return this.kashmir;
