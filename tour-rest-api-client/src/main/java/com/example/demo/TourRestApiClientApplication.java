@@ -50,23 +50,6 @@ public class TourRestApiClientApplication {
 		return new RestTemplate();
 	}
 	
-	@Bean
-	public RestTemplate securedTemplate() {
-		
-		RestTemplate template = new RestTemplate();
-		
-		template.getInterceptors().add(interceptor());
-
-		return template;
-
-		
-		
-	}
 	
-	@Bean
-	public BasicAuthenticationInterceptor interceptor() {
-
-	return new BasicAuthenticationInterceptor("guest", "guest");
-	}
 
 }
