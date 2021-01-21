@@ -7,6 +7,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
@@ -49,4 +50,23 @@ public class TourRestApiClientApplication {
 		return new RestTemplate();
 	}
 	
+	@Bean
+	public RestTemplate securedTemplate() {
+		
+		RestTemplate template = new RestTemplate();
+		
+		template.getInterceptors().add(interceptor());
+
+		return template;
+
+		
+		
+	}
+	
+	@Bean
+	public BasicAuthenticationInterceptor interceptor() {
+
+	return new BasicAuthenticationInterceptor("guest", "guest");
+	}
+
 }
