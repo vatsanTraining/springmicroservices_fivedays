@@ -3,6 +3,13 @@ server:
   
 spring:  application:    name: api-gateway
     
+info:
+  app:
+    name:@project.name@
+    version:@project.version@
+    encoding:@project.build.sourceEncoding@
+  java:
+      version:@java.version@
 
 zuul:
   host:
@@ -16,4 +23,5 @@ zuul:
        path: /review-service/**
        url: http://localhost:3434/      
        
-management:  endpoints:    web:      exposure:        include:        - "*"      
+management:  endpoints:    web:      exposure:        include:        - "*"        endpoint:    health:
+     show-details: always
