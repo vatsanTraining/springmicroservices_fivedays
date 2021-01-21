@@ -4,8 +4,7 @@ spring:
         
         
           cloud:    config:      fail-fast: true
-      retry:        max-attempts: 15
-        max-interval: 120000      discovery:        service-id: config-server
+      discovery:        service-id: config-server
     discovery:      enabled: true
       
       
