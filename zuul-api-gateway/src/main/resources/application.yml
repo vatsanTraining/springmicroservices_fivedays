@@ -1,0 +1,19 @@
+server:
+  port: 2020
+  
+spring:  application:    name: api-gateway
+    
+
+zuul:
+  host:
+    socket-timeout-millis: 2000000
+  ribbon:
+     eager-load:
+      enabled: true
+      
+  routes:
+    review-service:
+       path: /review-service/**
+       url: http://localhost:3434/      
+       
+management:  endpoints:    web:      exposure:        include:        - "*"      
