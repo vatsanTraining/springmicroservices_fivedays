@@ -11,5 +11,11 @@ public class ImageServiceConfiguration implements ImageClient{
 		
 		return "Default Message from Feign";
 	}
+
+	@Override
+	public String getImage(int id) {
+
+		return "Default Image -Taj Mahal";
+	}
 	
 }

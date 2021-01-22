@@ -20,4 +20,11 @@ public class ImageClientController {
 		  return this.client.getInfo(id);
 	  }
 
+	
+	 @GetMapping(path = "/feign/images/{id}")
+	  public String getImage(@PathVariable("id") int id)  {
+		  
+		  return this.client.getImage(id);
+	  }
+
 }
