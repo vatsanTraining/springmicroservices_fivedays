@@ -6,3 +6,10 @@ feign:
   hystrix:
     enabled: true
     
+hystrix:
+  command:
+     getImage:
+       execution:
+         isolation:
+           thread:
+             timeoutInMilliseconds=2000
