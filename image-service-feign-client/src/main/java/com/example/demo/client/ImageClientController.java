@@ -5,7 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class ImageClientController {
 
 	
@@ -16,7 +19,8 @@ public class ImageClientController {
 
 	 @GetMapping(path = "/feign/message/{id}")
 	  public String getMessage(@PathVariable("id") int id)  {
-		  
+		
+		 log.info("Client Called");
 		  return this.client.getInfo(id);
 	  }
 
@@ -24,6 +28,7 @@ public class ImageClientController {
 	 @GetMapping(path = "/feign/images/{id}")
 	  public String getImage(@PathVariable("id") int id)  {
 		  
+		 log.info("Get Image Client Called");
 		  return this.client.getImage(id);
 	  }
 

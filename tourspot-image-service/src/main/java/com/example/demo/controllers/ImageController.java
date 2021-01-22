@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Image;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class ImageController {
 
 	
@@ -25,10 +28,13 @@ public class ImageController {
 	@GetMapping(path = "/images/{id}")
 	public Image getImage(@PathVariable("id") int id)  throws InterruptedException,Exception{
 		
-		
+		log.info("Get Image Called");
 		if(id==2) {
 			
+			log.error(" Invalid Value");
 			throw new Exception("Exception");
+			
+			
 		}
 		if(id<10) {
 			
@@ -36,6 +42,7 @@ public class ImageController {
 		} else {
 			
 			Thread.sleep(6000);
+			
 			return this.simla;
 		}
 		
@@ -43,7 +50,7 @@ public class ImageController {
 	
 	@GetMapping(path = "/images/message/{id}")
 	public String getInfo(@PathVariable("id") int id) throws Exception {
-		
+		log.info("Get Info Called");
 		if(id==2) {
 			
 			return "Hello From Image Controller";
