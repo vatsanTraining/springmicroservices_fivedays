@@ -1,0 +1,131 @@
+
+
+
+Lab - 2
+
+  1. Constructor Injection - @AutoWired
+  2. Setter Injection - @Autowired
+  3.  Passing Bean Reference - @Bean 
+  4. Using multiple Configuration classes and resolving bean with @Qualifier
+
+
+Lab - 4
+
+ 1. sterotype
+ => Done 2. Autowired - @Qualifier,@Primary
+ => Done 3. Singleton-Prototype
+ => Done 4. Eager-Lazy
+ => Done 5. LifeCycle Methods
+
+
+ Assignment -1 
+
+ Create a Java class SalesOrder with properties like int orderId, LocalDate createdDate,Customer customer, List<Item> itemList
+
+Use Spring DI and Inversion control and the print the orderDetails 
+and the List of Items on the console.
+
+  => Create Three classes namely SalesOrder,Customer,Item 
+  => Create a Configuration class and Register the beans
+  => From the Main method get the Bean and print the details
+============================================================================
+
+
+
+
+Day - 2 
+
+
+Lab -2 
+
+    1. Create a Spring Starter Project  with web,lombok,data jpa and mysqldriver
+    2. Create an Entity Class add @Entity,@Table,@Id,@Column annotations
+    3. Create an Interface by extending JPA Repository
+    4. Create a Java Class annotate with @Service and wire Repository
+    5. Create a Java Class Annotate with @RestController
+    6. In the controller class add @GetMapping,@PostMapping etc
+    7. Test the application with POSTMan
+
+
+-----------------------------------------------------------------
+Day -3
+
+ Assignment-1 
+
+   1. Create a Spring boot starter project with web,lombok,data           jpa,mysqldriver,eureka client,data jpa hateos,Rest Repositories
+   2. Create a Java Class TourAgent with properties like id,name,location,phoneNumber
+   3. Add the Annotation like @Entity,@Table,@Id and also lombok related annotations
+   4. Create a Interface extending JPA repository and add RepositoryRestResource  
+   5. Rename the application.properties to application.yml
+   6. Add the Configuration related to Database and eureka client
+   7. In the defaultZone property give the reference both the instances of eureka server
+   8. Run and check the service registered with both the instances 
+   9. Invoke the service from one registry and stop that and try again 
+
+
+
+
+Day - 4
+
+
+1. Create a new Spring Starter project with web,lombok,actuator
+2. Create a Java Bean Review 
+3. Create A Controller and Expose a getMapping which returns a Review 
+4. Check the application works 
+5. Add two profiles in the application.yml and execute the application in both the    profiles
+6. Create another Spring Starter Project with web,actuator and ribbon
+7. Using the RestTemplate with @LoadBalanced access the reviewservice in a load balanced way
+
+8 Configure  these service also to Zuul and check you are able access review service    also through zuul
+
+
+
+
+Day -5 
+
+1. Create Spring Boot Starter Project with following dependencis : web,lombok,actuator,oAuth2ResourceServer,cloud oauth
+
+2.Create a Model Class 
+
+3. Register Beans of the Model class and BctryptPasswordEncoder
+
+4. Create a Rest Controller which returns the Model class Object
+
+5. Try Executing and Calling the Rest Controller EndPoint and observe the Login form being shown
+
+6. Add @EnableResourceServer annotation to the class with main method and observe
+    It should throw an exception with => Full authentication is required to access this resource
+
+7. Create a Java class SecurityConfig by extending WebSecurityConfigurerAdapter and 
+   override the configure() method, and authenticationManagerBean() methods
+
+8  AutoWire  PasswordEncoder Bean 
+
+9.Create a Configuration Class by Extending  AuthorizationServerConfigurerAdapter 
+10 Add the annotation @Configuration and @EnableAuthorizationServer
+
+11.AutoWrite AuthenticationManager and PasswordEncode
+
+12 Override all three configure methods
+
+14 Run the Application 
+
+15. Use the postman and make a Post Request with http://localhost:8080/oauth/token
+    pass the basicauthentication details and paramters like grant_type      username,password
+
+16. Onsuccessful execution should get the token
+
+17 Use the token to make the call to the Hospital Controller and view the response
+
+
+========================================================================
+    
+1. Client Credentials  - 
+2. In the postman use Basic Authentication and in the Body tabl form-url-encoded
+   add the grant_type : client_credentials
+3. Change the SecruityConfig and AuthrorizationConfigurerAdapter suitably
+
+
+
+
+
