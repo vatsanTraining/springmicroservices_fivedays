@@ -31,7 +31,7 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
 		
 		clients.inMemory().withClient("ourclient").secret(encoder.encode("pass123"))
 		          .authorizedGrantTypes("client_credentials").scopes("read", "write")
-		          .redirectUris("http://localhost:8080/login/code/ourclient").autoApprove(false);
+		          .redirectUris("http://localhost:3030/login/code/ourclient").autoApprove(false);
 	}
 
 	@Override
