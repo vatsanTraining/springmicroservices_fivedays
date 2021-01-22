@@ -30,7 +30,7 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		
 		clients.inMemory().withClient("ourclient").secret(encoder.encode("pass123"))
-		          .authorizedGrantTypes("password").scopes("read", "write")
+		          .authorizedGrantTypes("client_credentials").scopes("read", "write")
 		          .redirectUris("http://localhost:8080/login/code/ourclient").autoApprove(false);
 	}
 
