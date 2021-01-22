@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: feign-client-service
+
+feign:
+  hystrix:
+    enabled: true
